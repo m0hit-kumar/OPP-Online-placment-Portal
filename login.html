@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Auth Demo</title>
+
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.css" rel="stylesheet" />
+        <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.js"></script>
+        <link href="./CSS/login.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <center id="title" class="bigger">ONLINE PLACEMENT PORTAL</center>
+        <center id="title" class="smaller">OPP</center>
+        <div class="d-flex justify-content-center p-5 ">
+            <div class="card" style="background-image: url(./img/background.gif);">
+                <div class="card-header">
+                    <center>
+                        <h3>Login Form</h3>
+                    </center>
+                </div>
+                <form id="loginForm" class="card-body px-5 py-4">
+                    <select id="role">
+                        <option value="" disabled selected hidden>Select a Role</option>
+                        <option value="Admin">Admin</option>
+                        <option value="Teacher">Teacher</option>
+                        <option value="students">Student</option>
+                    </select><br>
+                    <label class="custom-field">
+                        <input type="text" id="username" class="input" required />
+                        <span class="placeholder">Email Id</span>
+                    </label><br />
+                    <label class="custom-field">
+                        <input type="password" id="password" class="input" required />
+                        <span class="placeholder">Password</span>
+                    </label><br /><br />
+                    <center><button type="submit" id="login" class="btn btn-primary">Login</button>
+                    </center>
+                </form>
+            </div>
+
+
+        </div>
+
+        <div class="fotter-img"></div>
+
+
+
+
+        <script type="module">
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-app.js";
+
+            import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-auth.js"
+            import { doc, getDoc, getFirestore } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-firestore.js"
+            const firebaseConfig = {
+                apiKey: "AIzaSyApDLiOvCkuhozs-7_ebxCkeYRbaaPaClw",
+                authDomain: "opp-online-placement-portal.firebaseapp.com",
+                projectId: "opp-online-placement-portal",
+                storageBucket: "opp-online-placement-portal.appspot.com",
+                messagingSenderId: "1018033370321",
+                appId: "1:1018033370321:web:063832ae90f0b9bb6c01f0"
+            };
+
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const auth = getAuth(app);
+            const db = getFirestore();
+
+            // const uidi, user;
+            document.getElementById("login").addEventListener("click", (event) => {
+                event.preventDefault();
+
+                const role = document.getElementById("role").value;
+                const username = document.getElementById("username").value;
+                const password = document.getElementById("password").value;
+                console.log(role, username, password);
+                signInWithEmailAndPassword(auth, username, password).then(async (userCredential) => {
+                    const
+                        user = userCredential.user;
+                    const
+                        uidi = userCredential.user.uid;
+                    console.log("logged in");
+                    console.log(uidi, user);
+                    const userRef = doc(db, role, uidi);
+                    const userExists = await getDoc(userRef);
+
+                    if (userExists) {
+                        console.log("user exist");
+                        // export { user, uidi };
+                        localStorage.setItem("uidi", uidi);
+                        localStorage.setItem("userCredential", userCredential);
+                        localStorage.setItem("role", role);
+
+                        if (role == "Admin") {
+                            location.replace("adminDash.html");
+                        }
+                        else if (role == "students") {
+                            location.replace("studentDash.html");
+                        }
+                        else if (role == "Teacher") {
+                            location.replace("teacherDash.html");
+                        }
+                    }
+                    else {
+                        console.log("user do not exist");
+                    }
+
+
+                }).catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    console.log(error + errorMessage);
+                })
+
+            })
+
+
+        </script>
+    </body>
+
+</html>

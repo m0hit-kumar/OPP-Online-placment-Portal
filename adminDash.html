@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    <head>
+        <meta charset="UTF-8" />
+        <title>Dashboard</title>
+        <link rel="stylesheet" href="/CSS/dashboard.css" />
+
+        <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </head>
+
+    <body>
+        <div class="sidebar">
+            <!--mm logo-->
+            <ul class="nav-list">
+                <li>
+                    <i class="bx bx-search"></i>
+                    <input type="text" placeholder="Search..." />
+                    <span class="tooltip">Search</span>
+                </li>
+                <li onclick="openTab('tabs','dashboard')">
+                    <a href="#">
+                        <i class="bx bx-grid-alt"></i>
+                        <span class="links_name">Dashboard</span>
+                    </a>
+                    <span class="tooltip">Dashboard</span>
+                </li>
+                <li onclick="openTab('tabs','profilePage')">
+                    <a href="#">
+                        <i class="bx bx-user"></i>
+                        <span class="links_name">Profile</span>
+                    </a>
+                    <span class="tooltip">Profile</span>
+                </li>
+                <li onclick="openTab('tabs','updatePage')">
+                    <a href="#">
+                        <i class="bx bx-bell"></i>
+                        <span class="links_name">Updates</span>
+                    </a>
+                    <span class="tooltip">Updates</span>
+                </li>
+                <li onclick="openTab('tabs','postPage')">
+                    <a href="#">
+                        <i class="bx bx-edit"></i>
+                        <span class="links_name">Post</span>
+                    </a>
+                    <span class="tooltip">Post</span>
+                </li>
+
+                <li class="profile">
+                    <i class="bx bx-log-out" id="log_out"></i>
+                </li>
+            </ul>
+        </div>
+        <section class="section">
+            <section id="dashboard" class="tabs">
+                <div class="text">Dashboard</div>
+                <div class="addUserTabs">
+                    <button class="" onclick="openTab('smalltab', 'adminTab')">
+                        Admin
+                    </button>
+                    <button onclick="openTab('smalltab', 'teacherTab')">Teacher</button>
+                    <button onclick="openTab('smalltab', 'studentTab')">Student</button>
+                    <hr />
+
+
+                </div>
+
+
+                <div class="addUserSection">
+                    <div class="add-admin-card" id="addAD">
+                        <div class="admin-form-heading">
+                            <h1>Add Admin (Username/Email/Password)</h1>
+                        </div>
+                        <div class="add-admin-form">
+                            <div class="">
+                                <h1>Name</h1>
+                                <input type="text">
+                            </div>
+                            <div class="">
+                                <h1>Email</h1>
+                                <input type="text">
+                            </div>
+                            <div class="">
+                                <h1>password</h1>
+                                <input type="text">
+                            </div><button class="myButtonElement" id=" closeAdminCard"
+                                style="background-color:red;">Cancel</button>
+                            <button class="myButtonElement" onclick="addAdminForm()">Add
+                                Admin</button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="dataTabels">
+                        <div id="adminTab" class="smalltab list-style">
+                            <!-- <h3>Admin Tab</h3> -->
+                            <div class="data-tabel-heading">
+                                <div class="search-data">
+                                    <i class="bx bx-search"></i>
+                                    <input id="email " id="email" placeholder="Search for admins" />
+                                </div>
+
+                                <button class="myButtonElement" id="openAdminCard">Add Admin</button>
+                                <button class="myButtonElement " id="downloadAdminCSV">Download CSV
+                                    Admin</button>
+
+                                <i class="bx bx-refresh refreshButton" onclick="window.location.reload()"></i>
+
+
+                            </div>
+                            <div class="heading headings-stud">
+                                <!-- <h1>S.no</h1>
+                                <h1>Name</h1>
+                                <h1>Email</h1> -->
+                            </div>
+                            <div class="admin-list listitem">
+                                <div class="heading listitem-item admin-list-item ">
+                                    <h1 class="sno">S.no</h1>
+                                    <h1 class="name_">Name</h1>
+                                    <h1 class="email_">Email</h1>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div id="teacherTab" class="smalltab hide">
+                            <div class="data-tabel-heading">
+                                <div class="search-data">
+                                    <i class="bx bx-search"></i>
+                                    <input id="email " id="email" placeholder="Search for teacher" />
+                                </div>
+
+                                <button class="myButtonElement" onclick="">Add Teacher</button>
+                                <button class="myButtonElement " id="downloadTeachCSV">Download Teacher CSV
+                                </button>
+                                <i class="bx bx-refresh refreshButton" onclick="window.location.reload()"></i>
+
+
+
+                            </div>
+                            <div class="heading headings-teach">
+                                <h1>S.no</h1>
+                                <h1>Name</h1>
+                                <h1>Email</h1>
+                                <h1>Department</h1>
+                                <h1>Class Mentor</h1>
+                                <h1>Year</h1>
+                            </div>
+                            <div class="listitem">
+                                <div class="heading listitem-item ">
+                                    <h1 class="tsno">S.no</h1>
+                                    <h1 class="tname">Name</h1>
+                                    <h1 class="temail">Email</h1>
+                                    <h1 class="tdepartment">Department</h1>
+                                    <h1 class="tsection">Class Mentor</h1>
+                                    <h1 class="tyear">Year</h1>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div id="studentTab" class="smalltab hide">
+                            <div class="data-tabel-heading">
+                                <div class="search-data">
+                                    <i class="bx bx-search"></i>
+                                    <input id="email " id="email" placeholder="Search for students" />
+                                </div>
+
+                                <button class="myButtonElement" onclick="">Add Student</button>
+
+                                <i class="bx bx-refresh refreshButton" onclick="window.location.reload()"></i>
+
+
+                            </div>
+                            <div class="heading headings-stud">
+                                <h1>S.no</h1>
+                                <h1>Name</h1>
+                                <h1>Email</h1>
+                                <h1>Roll no</h1>
+                                <h1>department</h1>
+                                <h1>Section</h1>
+                                <h1>year</h1>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            <section id="profilePage" class="tabs hide">
+                <div class="text">Profile Page</div>
+
+                <div class="card profilecard">
+                    <div> <i class="bx bxs-user-circle avatar"></i>
+                    </div>
+                    <div class="profile-form">
+                        <div style="display: flex;justify-content:space-between">
+                            <div class="profile-form-element">
+                                <h1>Roll No</h1>
+                                <input type="text">
+                            </div>
+
+                            <div class="profile-form-element">
+                                <h1>Full Name</h1>
+                                <input type="text" class="admin-name" readonly>
+                            </div>
+                        </div>
+                        <div class="profile-form-element">
+                            <h1>Email</h1>
+                            <input type="text" class="admin-email" style="width:100%">
+                        </div>
+                        <div class="profile-form-element">
+                            <h1>Conatct Number</h1>
+                            <input type="text" style="width:100%">
+                        </div>
+                        <div style="display: flex;justify-content:space-between">
+                            <div class="profile-form-element">
+                                <h1>Section</h1>
+                                <input type="text">
+                            </div>
+                            <div class="profile-form-element">
+                                <h1>Department</h1>
+                                <input type="text">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <br>
+
+
+
+                <section id="updatePage" class="tabs hide">
+                    <div class="text">Update Page</div>
+                </section>
+                <section id="postPage" class="tabs hide">
+                    <div class="text">Post Page</div>
+                </section>
+            </section>
+            <script type="text/javascript"
+                src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.13.1/xlsx.full.min.js"></script>
+
+            <script type="module">
+                // ---------------firebase config start -----------------------
+
+                import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-app.js";
+
+                import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-auth.js"
+                import { doc, getDoc, getFirestore, query, getDocs, where, collection } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-firestore.js"
+                const firebaseConfig = {
+                    apiKey: "AIzaSyApDLiOvCkuhozs-7_ebxCkeYRbaaPaClw",
+                    authDomain: "opp-online-placement-portal.firebaseapp.com",
+                    projectId: "opp-online-placement-portal",
+                    storageBucket: "opp-online-placement-portal.appspot.com",
+                    messagingSenderId: "1018033370321",
+                    appId: "1:1018033370321:web:063832ae90f0b9bb6c01f0"
+                };
+
+                // Initialize Firebase
+                const app = initializeApp(firebaseConfig);
+                const auth = getAuth(app);
+                const db = getFirestore();
+
+                var uidi = localStorage.getItem("uidi");
+                var user = localStorage.getItem("user");
+                var role = localStorage.getItem("role");
+
+                // ---------------firebase config end -------------------------
+
+                console.log(uidi, user, role);
+                // (async function () {
+
+                const userRef = doc(db, role, uidi);
+                const userExists = await getDoc(userRef);
+                console.log(userExists.data());
+
+                console.log(userExists.data().name);
+                document.getElementsByClassName("admin-name").value = userExists.data().name;
+                document.getElementsByClassName("admin-email").placeholder = userExists.data().email;
+                // })
+
+
+                //----------------admin data start-------------------------
+
+                var adminNames = [], adminEmails = [];
+                var adminCSV = [];
+
+
+                const adminData = await getDocs(collection(db, "Admin"));
+                adminData.forEach((doc) => {
+                    adminCSV.push(doc.data())
+                    adminNames.push(doc.data().name);
+                    adminEmails.push(doc.data().email);
+
+                });
+                document.getElementById("downloadAdminCSV").addEventListener("click", () => {
+                    var filename = 'AdminData.xlsx';
+
+                    var ws = XLSX.utils.json_to_sheet(adminCSV);
+                    var wb = XLSX.utils.book_new();
+                    XLSX.utils.book_append_sheet(wb, ws, "Students");
+                    XLSX.writeFile(wb, filename);
+
+                })
+                //----------------admin data end-------------------------
+
+
+                //----------------student data start-------------------------
+                var studentNames = [], studentEmails = [], studentRollnos = [], studentPhonenumbers = [], studentDepartments = [], studentSections = [], studentCSV = [];
+                const studentsData = await getDocs(collection(db, "students"));
+                studentsData.forEach((doc) => {
+                    studentCSV.push(doc.data());
+                    studentNames.push(doc.data().username);
+                    studentEmails.push(doc.data().email);
+                    studentRollnos.push(doc.data().rollno);
+                    studentPhonenumbers.push(doc.data().phoneNumber);
+                    studentDepartments.push(doc.data().department);
+                    studentSections.push(doc.data().section);
+
+                });
+
+
+
+                //----------------student data end-------------------------
+
+                // ------------------teacher data section start-----------------
+                var teacherNames = [], teacherEmails = [], teacherPhonenumbers = [], teacherDepartments = [], teacherSections = [], teacherCSV = [];
+
+                const teachersData = await getDocs(collection(db, "Teacher"));
+                teachersData.forEach((doc) => {
+                    teacherCSV.push(doc.data());
+                    teacherNames.push(doc.data().username);
+                    teacherEmails.push(doc.data().email);
+                    teacherPhonenumbers.push(doc.data().phoneNumber);
+                    teacherDepartments.push(doc.data().department);
+                    teacherSections.push(doc.data().section);
+
+                });
+
+                document.getElementById("downloadTeachCSV").addEventListener("click", () => {
+                    var filename = 'TeachersData.xlsx';
+
+                    var ws = XLSX.utils.json_to_sheet(teacherCSV);
+                    var wb = XLSX.utils.book_new();
+                    XLSX.utils.book_append_sheet(wb, ws, "Teachers");
+                    XLSX.writeFile(wb, filename);
+
+                })
+
+                // ------------------teacher data section end -----------------
+
+                document.getElementById("openAdminCard").addEventListener("click", () => {
+
+                })
+
+                // -------- add data to admin table start--------------
+
+                var adminlist = document.getElementsByClassName("admin-list")[0];
+
+                var list_el = document.getElementsByClassName("admin-list-item")[0];
+                var i;
+                for (i = 0; i < adminNames.length; i++) {
+                    var cloneELm = list_el.cloneNode(true);
+                    cloneELm.children[0].innerText = i + 1;
+                    cloneELm.children[1].innerText = adminNames[i];
+                    cloneELm.children[2].innerText = adminEmails[i];
+                    adminlist.appendChild(cloneELm);
+                };
+                // -------- add data to admin table end--------------
+
+                // var teacherlist = document.getElementsByClassName("teach-list")[0];
+
+                // var list_el = document.getElementsByClassName("admin-list-item")[0];
+                // var i;
+                // for (i = 0; i < adminNames.length; i++) {
+                //     var cloneELm = list_el.cloneNode(true);
+                //     cloneELm.children[0].innerText = i + 1;
+                //     cloneELm.children[1].innerText = adminNames[i];
+                //     cloneELm.children[2].innerText = adminEmails[i];
+                //     adminlist.appendChild(cloneELm);
+                // };
+
+// -------- add data to teacher table start--------------
+
+
+
+
+// -------- add data to teacher table end--------------
+
+
+                // document.getElementById("close-admin-form").addEventListener("click", () => {
+
+                //     document.getElementsByClassName("add-admin-card").style.display = "none";
+                // });
+
+            </script>
+
+            <script src="js/adminDash.js"></script>
+
+    </body>
+
+</html>
