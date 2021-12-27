@@ -8,16 +8,16 @@
 
 1. Abstract
 2. Chapter 1. Introductionabout Project
-  2.1	Description about work
-  2.2	Reasons for Selection of this Project work
+    - 2.1 Description about work
+    - 2.2 Reasons for Selection of this Project work
 3. Platform Requirements
 4. Objectives of Project Work
 5. MethodologyUsed
-  5.1.	Proposed Algorithm or Technique 
-  5.2.	Data flow Diagrams Used 
+   - 5.1 Proposed Algorithm or Technique 
+   - 5.2 Data flow Diagrams Used 
 6. Results & Discussion
-  6.1.	Screen shots obtained by running project 
-  6.2.	Description about obtained result 
+   - 6.1. Screen shots obtained by running project 
+   -  6.2. Description about obtained result 
 7. Chapter 6. Future Scope 
 8. REFERENCES 
 
@@ -123,7 +123,7 @@ Four basic symbols are used to construct data flow diagrams. They are symbols th
 ## **CHAPTER – 5**
 **RESULTS & DISCUSSION**
  
-** 1. Screenshots of running Code**
+**1. Screenshots of running Code**
   
 ## <img src="https://github.com/m0hit-kumar/OPP--Online-placment-Portal/blob/main/Readme%20Resource/login.png ">
   
@@ -154,7 +154,7 @@ Four basic symbols are used to construct data flow diagrams. They are symbols th
  
 ##
 
-** 2 Descriptions of Obtained Result**
+**2 Descriptions of Obtained Result**
 
 This application will provide access publicly to all semester students displaying the on-campus placement their opportunity which motivate them to decide their desired company and prepare themselves earlier.
 This application is one of its’ kind which displays the all the necessary details offered by the arrived company (i.e. designation, package, location) clarifying the picture to students to choose their desired job and applying for it.
@@ -181,16 +181,7 @@ All in all our platform will create and ease for aspirants so that the process b
 
 
 
-
-
-
-
-
-
-
-
-
-REFERENCE
-https://flutter.dev/
-https://firebase.google.com/
-https://www.w3schools.com/ 
+## **REFERENCE**
+	- https://flutter.dev/
+	- https://firebase.google.com/
+	- https://www.w3schools.com/ 
