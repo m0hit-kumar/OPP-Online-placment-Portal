@@ -1,30 +1,29 @@
 # OPP-Online-placment-Portal
 
 
-1. fruits
-     * apple
-     * banana
-  2. vegetables
-     - carrot
-     - broccoli
 
-**TABLE OF CONTENTS**
+
+
+## **TABLE OF CONTENTS**
 
 1. Abstract
-4. List of Figures
-5. Chapter 1. Introductionabout Project
-  *	Description about work
-  *	Reasons for Selection of this Project work
-6. Platform Requirements
-7. Objectives of Project Work
-8. MethodologyUsed
-  4.1.	Proposed Algorithm or Technique 
-  4.2.	Data flow Diagrams Used 
-9. Results & Discussion
-  5.1.	Screen shots obtained by running project 
-  5.2.	Description about obtained result 
-Chapter 6. Future Scope 
-REFERENCES 
+2. Chapter 1. Introductionabout Project
+  2.1	Description about work
+  2.2	Reasons for Selection of this Project work
+3. Platform Requirements
+4. Objectives of Project Work
+5. MethodologyUsed
+  5.1.	Proposed Algorithm or Technique 
+  5.2.	Data flow Diagrams Used 
+6. Results & Discussion
+  6.1.	Screen shots obtained by running project 
+  6.2.	Description about obtained result 
+7. Chapter 6. Future Scope 
+8. REFERENCES 
+
+##
+<br>
+<br>
 
 
 
@@ -99,21 +98,21 @@ This is a platform where students can register themselves and check all the arri
 **1. ER DIAGRAM:-**
       
  An **Entity Relation** (ER) Diagram is a specialized graphics that illustrates the interrelationship between entities in a database. ER diagrams often use symbols to represent 3 different types of information. Boxes are commonly used to represent entities. Diamonds are normally used to represent relationships and ovals are used to represent attributes.
- An Entity Relationship Model (ERM), in software engineering is an abstract and conceptual representation of data. Entity Relationship modeling is a relational schema database modeling method, used to produce a type of conceptual schema or semantic data model of a system, often a relation database, and its requirements in a top-down fashion. 
+ An **Entity Relationship Model** (ERM), in software engineering is an abstract and conceptual representation of data. Entity Relationship modeling is a relational schema database modeling method, used to produce a type of conceptual schema or semantic data model of a system, often a relation database, and its requirements in a top-down fashion. 
 
-•	Entity: Entity is the thing which we want to store information. It is an elementary basic building block of storing information about business process. An entity represents an object defined within the information system about which you want to store information. Entities are distinct things in the enterprise.
-Relationships: A relationship is a named collection or association 
+•Entity: Entity is the thing which we want to store information. It is an elementary basic building block of storing information about business process. An entity represents an object defined within the information system about which you want to store information. Entities are distinct things in the enterprise.
 
 **2 Data Flow Diagrams:-**
 
-•	between entities or used to relate two or more entities with some common attributes or meaningful interaction between the objects.
+• **Relationships**: A relationship is a named collection or association 
+between entities or used to relate two or more entities with some common attributes or meaningful interaction between the objects.
 
-•	Attributes: Attributes are the properties of the entities and relationship, Descriptor of the entity. Attributes are elementary pieces of information attached to an entity.
-A Data Flow Diagram (DFD) is a diagram that describes the flow of data and the processes that change or transform data throughout a system. The Data Flow Diagram reviews the current physical system prepares input and output specifications specifies the implementation plan etc.
+• **Attributes**: Attributes are the properties of the entities and relationship, Descriptor of the entity. Attributes are elementary pieces of information attached to an entity.
+A **Data Flow Diagram (DFD)** is a diagram that describes the flow of data and the processes that change or transform data throughout a system. The Data Flow Diagram reviews the current physical system prepares input and output specifications specifies the implementation plan etc.
 Four basic symbols are used to construct data flow diagrams. They are symbols that represent data sources, data flows, and data transformation and data storage. The points at which data are transformed are represented by enclosed figures, usually circles, which are called nodes.
 
 
-- <img src="https://github.com/m0hit-kumar/OPP--Online-placment-Portal/blob/main/Readme%20Resource/er.png">
+  <img src="https://github.com/m0hit-kumar/OPP--Online-placment-Portal/blob/main/Readme%20Resource/er.png" style="width:50%;height:50% ">
  
   
 
@@ -121,18 +120,30 @@ Four basic symbols are used to construct data flow diagrams. They are symbols th
 
 
 
-
-
-
-
-
-
-
-CHAPTER – 5
-RESULTS & DISCUSSIONS
+## **CHAPTER – 5**
+**RESULTS & DISCUSSION**
  
-5.1 Screenshots of running Code
+** 1. Screenshots of running Code**
   
+## <img src="https://github.com/m0hit-kumar/OPP--Online-placment-Portal/blob/main/Readme%20Resource/login.png ">
+  
+  
+## <img src="https://github.com/m0hit-kumar/OPP--Online-placment-Portal/blob/main/Readme%20Resource/dash1.png ">
+ 
+ 
+## <img src="https://github.com/m0hit-kumar/OPP--Online-placment-Portal/blob/main/Readme%20Resource/dash2.png ">
+    
+    
+## <img src="https://github.com/m0hit-kumar/OPP--Online-placment-Portal/blob/main/Readme%20Resource/dash3.png ">
+  
+  
+## <img src="https://github.com/m0hit-kumar/OPP--Online-placment-Portal/blob/main/Readme%20Resource/post.png ">
+  
+  
+## <img src="https://github.com/m0hit-kumar/OPP--Online-placment-Portal/blob/main/Readme%20Resource/post2.png">
+
+  
+## <img src="https://github.com/m0hit-kumar/OPP--Online-placment-Portal/blob/main/Readme%20Resource/profile.png ">
 
  
  
@@ -141,8 +152,10 @@ RESULTS & DISCUSSIONS
  
 
  
+##
 
-5.2 Descriptions of Obtained Result
+** 2 Descriptions of Obtained Result**
+
 This application will provide access publicly to all semester students displaying the on-campus placement their opportunity which motivate them to decide their desired company and prepare themselves earlier.
 This application is one of its’ kind which displays the all the necessary details offered by the arrived company (i.e. designation, package, location) clarifying the picture to students to choose their desired job and applying for it.
 
@@ -154,10 +167,13 @@ This application is one of its’ kind which displays the all the necessary deta
 
 
 
-CHAPTER – 6
-FUTURE SCOPE 
+## **CHAPTER – 6**
 
-The future scope of the platform is that it will provide the convenience to the students and aspirants to upload their documents and resume on this, and moreover can compare different companies through our data analysis which will enlighten them about the average packages and average number of students they hire in each session even will get some basic traits on which the company searches its candidates. 
+**FUTURE SCOPE** 
+
+The future scope of the platform is that it will provide the convenience to the students and aspirants to upload their documents and resume on this, and moreover can compare different companies through our data analysis which will enlighten them about the average packages and average number of students they hire in each session even will get some basic traits on which the company searches its candidates.
+
+
 The students and aspirants will also get notified about their placement schedule through notifications on a regular basis. For future we are even planning to conduct aptitude exams for companies on our platform, also planning for uploading preparation material and that will be made available for all the semester students 
 All in all our platform will create and ease for aspirants so that the process becomes more swift and easy. 
 
